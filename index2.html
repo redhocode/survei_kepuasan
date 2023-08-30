@@ -144,7 +144,10 @@
                                                 <option value="D4">D4</option>
                                                 <option value="S1">S1</option>
                                                 <option value="S2">S2</option>
-                                            </select>
+                                                    <option value="Lainnya">Lainnya</option>
+                                                    </select>
+                                                    <input type="text" id="pendidikanLainnya" class="form-control mt-2" name="pendidikanLainnya"
+                                                        placeholder="Pendidikan Lainnya" style="display: none;">
                                             <div class="invalid-feedback">Pilih pendidikan Anda.</div>
                                         </div>
 
@@ -649,6 +652,18 @@
                 layananLainnyaInput.removeAttribute("required");
             }
         });
+
+                document.getElementById("pendidikan").addEventListener("change", function () {
+                        var pendidikanLainnyaInput = document.getElementById("pendidikanLainnya");
+
+                        if (this.value === "Lainnya") {
+                            pendidikanLainnyaInput.style.display = "block";
+                            pendidikanInput.setAttribute("required", "required");
+                        } else {
+                            pendidikanLainnyaInput.style.display = "none";
+                            pendidikanLainnyaInput.removeAttribute("required");
+                        }
+                    });
     </script>
 </body>
 
